@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
+/* Agregamos requestmapping como una ruta raiz para los demas endpoints */
 public class UserRestController {
 
   @GetMapping("/detailsRest")

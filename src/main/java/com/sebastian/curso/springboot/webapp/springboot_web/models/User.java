@@ -3,11 +3,12 @@ package com.sebastian.curso.springboot.webapp.springboot_web.models;
 public class User {
 
   private String name;
-  private String last_name;
+  private String lastname;
+  private String email;
 
-  public User(String name, String last_name) {
+  public User(String name, String lastname) {
     this.name = name;
-    this.last_name = last_name;
+    this.lastname = lastname;
   }
 
   public String getName() {
@@ -18,12 +19,20 @@ public class User {
     this.name = name;
   }
 
-  public String getLast_name() {
-    return last_name;
+  public String getLastname() {
+    return lastname;
   }
 
-  public void setLast_name(String last_name) {
-    this.last_name = last_name;
+  public void setLastname(String lastname) {
+    this.lastname = lastname;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
 
 }

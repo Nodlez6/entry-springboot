@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.sebastian.curso.springboot.webapp.springboot_web.models.User;
 
@@ -25,11 +26,16 @@ public class UserController {
 
   @GetMapping("/list")
   public String list(ModelMap model) {
-    List<User> users = Arrays.asList(new User("Seba", "Gallardo"), new User("Maria", "Palma"));
 
-    model.addAttribute("users", users);
     model.addAttribute("title", "Listado de usuarios");
     return "list";
+  }
+
+  // Al colocar ModelAtributte el objeto users ya se encuentra en la vista de
+  // themleaf
+  @ModelAttribute("users")
+  public List<User> userModel() {
+    return Arrays.asList(new User("Seba", "Gallardo"), new User("Maria", "Palma"));
   }
 
 }

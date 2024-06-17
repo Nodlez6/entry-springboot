@@ -6,6 +6,23 @@
     <title th:text="${title}"></title>
   </head>
   <body>
-    <div th:if="${users.size == 0}">No tiene elementos usuario</div>
+    <div th:if="${users.size() == 0}">No tiene elementos usuario</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="us: ${users}">
+          <td th:text="${us.name}"></td>
+          <td th:text="${us.lastname}"></td>
+          <td th:text="${us.email}"></td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
